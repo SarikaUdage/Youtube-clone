@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Page - YouTube Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="header">
+    <div class="col-1">
+      <i class="fa-solid fa-bars"></i>
+      <div class="logo">
+        <img src="images/logo.png" alt="YouTube Clone Logo" />
+      </div>
+    </div>
+    <div class="col-2">
+      <input type="text" placeholder="Search" />
+      <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="mic"><i class="fa-solid fa-microphone"></i></button>
+    </div>
+    <div class="col-3">
+      <i class="fa-solid fa-video"></i>
+      <i class="fa-regular fa-bell"></i>
+      <i class="fa-solid fa-user"></i>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="list1">
+        <a href="index.html" class="sidebar-item"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-fire"></i><span>Trending</span></a>
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-clapperboard"></i><span>Subscriptions</span></a>
+      </div>
+      <hr />
+      <div class="list1">
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-book"></i><span>Library</span></a>
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-clock-rotate-left"></i><span>History</span></a>
+        <a href="#" class="sidebar-item"><i class="fa-regular fa-clock"></i><span>Watch Later</span></a>
+        <a href="#" class="sidebar-item"><i class="fa-regular fa-thumbs-up"></i><span>Liked Videos</span></a>
+      </div>
+    </div>
+
+    <div class="content" style="padding: 20px; display: flex; flex-wrap: wrap; margin-right: 0;">
+      <div style="flex: 2; min-width: 600px;">
+        <video id="main-video" controls style="width: 100%; border-radius: 8px;">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2 class="title" id="video-title" style="margin-top: 10px;"></h2>
+        <p class="channel-name" id="channel-name"></p>
+      </div>
+
+      <div style="flex: 1; min-width: 280px; margin-left: 20px;">
+        <h3 style="margin-bottom: 10px;">Up Next</h3>
+        <div id="recommendations"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
