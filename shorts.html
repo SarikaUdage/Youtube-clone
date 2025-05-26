@@ -230,9 +230,9 @@
 
   <div class="shorts-wrapper">
     <div class="shortscontainer">
-      <!-- Short 1 -->
+ 
       <div class="short">
-        <video src="img/short1.mp4" muted></video>
+        <video src="image/short1.mp4" muted></video>
         <div class="video-details">
           <div class="channel-info">
             <img src="images/satsang6.png" alt="User" />
@@ -245,10 +245,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Short 2 (Copy for more videos) -->
       <div class="short">
-        <video src="img/short2.mp4" muted></video>
+        <video src="image/short2.mp4" muted></video>
         <div class="video-details">
           <div class="channel-info">
             <img src="images/podcastlogo.png" alt="User" />
@@ -292,31 +290,23 @@
     </div>
   </div>
 
-<!-- 
-    <script>
-  document.querySelectorAll(".short video").forEach(video => {
-    video.addEventListener("click", () => {
-      video.muted = false;   // Unmute
-      video.play();          // Play
-    });
-  });
-</script> -->
+
 
 <script>
   const videos = document.querySelectorAll(".short video");
 
-  // Observe when a video is in view
+  
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
 
         if (entry.isIntersecting) {
-          // Auto pause muted by default; user clicks to unmute/play
+         
           video.pause();
           video.muted = true;
         } else {
-          // Stop and mute videos when out of view
+          
           video.pause();
           video.muted = true;
         }
