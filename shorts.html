@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <title>YouTube Shorts Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    } */
+
+    .shorts-wrapper {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .shortscontainer {
+      height: 100vh;
+      width: 320px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-left: 40%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      position: relative;
+    }
+
+    .shortscontainer::-webkit-scrollbar {
+      display: none;
+    }
+
+    .short {
+      scroll-snap-align: start;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .short video {
+      height: 100%;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .sidebar div {
+      text-align: center;
+      font-size: 14px;
+      color: black;
+    }
+
+    .sidebar div i {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .video-details {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .channel-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .channel-info img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .channel-info .subscribe-btn {
+      background: white;
+      color: black;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 20px;
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+     <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="./images/menu.png" class="menu-icon">
+            
+            <img src="image/YouTube_Logo_.svg" class="logo">
+        </div>
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Search">
+                <img src="images/search.png">
+            </div>
+            <img src="image/mic.png" class="mic-icon">
+        </div>
+        <div class="nav-right flex-div ">
+            <img src="./images/upload.png">
+            <img src="./images/more.png">
+            <img src="./images/notification.png">
+            <img src="./images/Jack.png" class="user-icon" onclick="toggleMenu()">
+        </div>
+
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="images/Jack.png">
+                    <h3>Jack Aldrino</h3>
+                </div>
+                <a href="#" id="tag">View your channel</a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/google.png">
+                    <p>Google Account</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/switch-account.png">
+                    <p>Switch account</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/logout.png">
+                    <p>Sign out</p>
+                </a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/youtube-studio.png">
+                    <p>YouTube Studio</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/membership.png">
+                    <p>Purchases and memberships</p>
+                </a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/your-data.png">
+                    <p>Your data in YouTube</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/night-mode.png">
+                    <p>Appearance: Light</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/language.png">
+                    <p>Language: British English</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/restriction.png">
+                    <p>Restricted Mode: Off</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/location.png">
+                    <p>Location: India</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/keyboard.png">
+                    <p>Keyboard shortcuts</p>
+                </a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/settings.png">
+                    <p>Settings</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/help.png">
+                    <p>Help</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/feedback.png">
+                    <p>Send feedback</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+  <div class="shorts-wrapper">
+    <div class="shortscontainer">
+      <!-- Short 1 -->
+      <div class="short">
+        <video src="img/short1.mp4" muted></video>
+        <div class="video-details">
+          <div class="channel-info">
+            <img src="images/satsang6.png" alt="User" />
+            <span>@gemsofbollywood234</span>
+            <span class="subscribe-btn">Subscribe</span>
+          </div>
+          <div class="title">guru</div>
+          <div class="desc">
+           Feeling close to gob when listen him..
+          </div>
+        </div>
+      </div>
+
+      <!-- Short 2 (Copy for more videos) -->
+      <div class="short">
+        <video src="img/short2.mp4" muted></video>
+        <div class="video-details">
+          <div class="channel-info">
+            <img src="images/podcastlogo.png" alt="User" />
+            <span>@greatvideos123</span>
+            <span class="subscribe-btn">Subscribe</span>
+          </div>
+          <div class="title">MS Dhoni</div>
+          <div class="desc">
+            One of the Favourite and talented cricker in india..
+          </div>
+        </div>
+      </div>
+       <div class="short">
+        <video src="img/short3.mp4" muted></video>
+        <div class="video-details">
+          <div class="channel-info">
+            <img src="images/podcastlogo.png" alt="User" />
+            <span>@gargi3</span>
+            <span class="subscribe-btn">Subscribe</span>
+          </div>
+          <div class="title">Motivational Clip from Movie</div>
+          <div class="desc">
+            Don't give up! This scene is powerful. #motivation #filmclip
+          </div>
+        </div>
+      </div>
+       <div class="short">
+        <video src="img/short4.mp4" muted></video>
+        <div class="video-details">
+          <div class="channel-info">
+            <img src="images/podcastlogo.png" alt="User" />
+            <span>@raja143</span>
+            <span class="subscribe-btn">Subscribe</span>
+          </div>
+          <div class="title">Satsang</div>
+          <div class="desc">
+            Feeling close to gob when listen him..
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 
+    <script>
+  document.querySelectorAll(".short video").forEach(video => {
+    video.addEventListener("click", () => {
+      video.muted = false;   // Unmute
+      video.play();          // Play
+    });
+  });
+</script> -->
+
+<script>
+  const videos = document.querySelectorAll(".short video");
+
+  // Observe when a video is in view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+          // Auto pause muted by default; user clicks to unmute/play
+          video.pause();
+          video.muted = true;
+        } else {
+          // Stop and mute videos when out of view
+          video.pause();
+          video.muted = true;
+        }
+      });
+    },
+    {
+      threshold: 0.6, 
+    }
+  );
+
+  
+  videos.forEach((video) => {
+    observer.observe(video);
+
+   
+    video.addEventListener("click", () => {
+      
+      videos.forEach((v) => {
+        if (v !== video) {
+          v.pause();
+          v.muted = true;
+        }
+      });
+
+      video.muted = false;
+      video.play();
+    });
+  });
+</script>
+
+
+  </script>
+</body>
+</html>

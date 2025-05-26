@@ -275,6 +275,16 @@ flex-wrap: wrap;
 .small-sidebar .shortcut-links h2{
     display:none ;
 }
+
+/* tags */
+
+.content-wrapper .categorylist{
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding: 0.75rem 0 0.7rem;
+}
 .categorylist{
     margin-left: 15%;
 }
@@ -344,9 +354,9 @@ flex-wrap: wrap;
     margin-bottom: 5px;
 }
 @media(max-width:900px){
-    .menu-icon{
+    /* .menu-icon{
         display: none;
-    }
+    } */
     .sidebar{
         display: none;
     }

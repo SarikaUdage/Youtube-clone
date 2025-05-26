@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube-clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="./images/menu.png" class="menu-icon">
+            <img src="image/YouTube_Logo_.svg" class="logo">
+        </div>
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Search">
+                <img src="images/search.png">
+            </div>
+            <img src="image/mic.png" class="mic-icon">
+        </div>
+        <div class="nav-right flex-div ">
+            <img src="./images/upload.png">
+            <img src="./images/more.png">
+            <img src="./images/notification.png">
+            <img src="./images/Jack.png" class="user-icon" onclick="toggleMenu()">
+        </div>
+
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="images/Jack.png">
+                    <h3>Jack Aldrino</h3>
+                </div>
+                <a href="#" id="tag">View your channel</a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/google.png">
+                    <p>Google Account</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/switch-account.png">
+                    <p>Switch account</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/logout.png">
+                    <p>Sign out</p>
+                </a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/youtube-studio.png">
+                    <p>YouTube Studio</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/membership.png">
+                    <p>Purchases and memberships</p>
+                </a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/your-data.png">
+                    <p>Your data in YouTube</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/night-mode.png">
+                    <p>Appearance: Light</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/language.png">
+                    <p>Language: British English</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/restriction.png">
+                    <p>Restricted Mode: Off</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/location.png">
+                    <p>Location: India</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/keyboard.png">
+                    <p>Keyboard shortcuts</p>
+                </a>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/settings.png">
+                    <p>Settings</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/help.png">
+                    <p>Help</p>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="images/feedback.png">
+                    <p>Send feedback</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- sidebar -->
+
+    <div class="sidebar">
+        <div class="shortcut-links">
+            <a href="index.html"><img src="image/home.svg">
+                <p>Home</p>
+            </a>
+            <a href=""><img src="img/shorts.png">
+                <p>Shorts</p>
+            </a>
+            <a href="subcriptions.html"><img src="img/subscribe.png">
+                <p>Subscriptions</p>
+            </a>
+            <hr>
+            <h2 style="margin-top: 10px;">You ></h2><br><br>
+            <a href=""><img src="image/clock-rotate-left-solid.svg">
+                <p>History</p>
+            </a>
+            <a href=""><img src="img/playlist.png">
+                <p>Playlist</p>
+            </a>
+            <a href=""><img src="img/your-vid.png">
+                <p>Your Videos</p>
+            </a>
+            <a href=""><img src="img/learning.png">
+                <p>Your cources</p>
+            </a>
+            <a href="" class="differ"><img src="image/watch-later.png">
+                <p>Watch Later</p>
+            </a>
+            <a href=""><img src="img/like.png">
+                <p>Liked videos</p>
+            </a>
+            <a href="downloads.html"><img src="image/download.png">
+                <p>Downloads</p>
+            </a>
+            <hr>
+        </div>
+        <div class="subscribed-list">
+            <h3>Subscriptions</h3>
+
+            <a href=""><img src="images/Jack.png">
+                <p>Jack Nicholson</p>
+            </a>
+            <a href=""><img src="images/simon.png">
+                <p>Simon Baker</p>
+            </a>
+            <a href="tom.html"><img src="images/megan.png">
+                <p>Tom Hardy</p>
+            </a>
+
+            <div class="more-subs" style="display: none;">
+                <a href=""><img src="images/tom.png">
+                    <p>Megan Ryan</p>
+                </a>
+                <a href=""><img src="images/cameron.png">
+                    <p>Cameron Diaz</p>
+                </a>
+            </div>
+
+            <button class="toggle-subs-btn">Show more </button>
+        </div>
+
+        <hr>
+        <div class="shortcut-links">
+            <h3>explore</h3><br>
+            <a href="index.html"><img src="img/trending.png">
+                <p>Trending</p>
+            </a>
+            <a href="music.html"><img src="img/music.png">
+                <p>Music</p>
+            </a>
+            <a href=""><img src="image/flims.png">
+                <p>Films</p>
+            </a>
+            <a href="gaming.html"><img src="image/game-controller.png">
+                <p>Gaming</p>
+            </a>
+            <a href="podcast.html"><img src="img/podcast.png">
+                <p>Podcasts</p>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- main -->
+     
+
+    <div class="container">
+        <div class="d-div">
+            <div class="left">
+                <h3 ><img src="img/subscribe.png" width="14px" height="14px" style="margin-right: 7px;">Subscriptions</h3><br><br>
+                <h4>Tom Hardy</h4>
+            </div>
+            <div class="right">
+                <a href="" style="color: blue;">Manage</a>
+            </div>
+        </div>
+        <div class="list-container">
+            <div class="vid-list">
+                <a href="downloads-play.html"><img src="images/thumbnail4.png" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="images/tom.png">
+                    <div class="vid-info">
+                        <a href="downloads-play.html">Jobs 2013 Full Movie|Full HD</a>
+                        <p>Tom Hardy</p>
+                        <p>13k views &bull;11 months ago</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href="downloads-play.html"><img src="images/thumbnail7.png" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="images/tom.png">
+                    <div class="vid-info">
+                        <a href="downloads-play.html">Best channel to learn coding</a>
+                        <p>Tom Hardy</p>
+                        <p>15k views &bull; 2 days</p>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href="downloads-play.html"><img src="images/thumbnail6.png" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="images/tom.png">
+                    <div class="vid-info">
+                        <a href="downloads-play.html">Jake Gyllenhaal's SOURCE CODE-Full Hindi Movie
+                            | Hollywood Movies in Hindi
+                        </a>
+                        <p>Tom Hardy</p>
+                        <p>2.5M views &bull; 2 years ago</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="vid-list">
+                <a href="downloads-play.html"><img src="images/thumbnail8.png" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="images/tom.png">
+                    <div class="vid-info">
+                        <a href="downloads-play.html">learn coding</a>
+                        <p>Tom Hardy</p>
+                        <p>15k views &bull; 2 days</p>
+           
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href="downloads-play.html"><img src="images/thumbnail4.png" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="images/tom.png">
+                    <div class="vid-info">
+                        <a href="downloads-play.html">Tutorial for Beginners</a>
+                        <p>Tom Hardy</p>
+                        <p>12M views &bull; 1 year ago</p>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href="downloads-play.html"><img src="images/thumbnail3.png" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="images/tom.png">
+                    <div class="vid-info">
+                        <a href="downloads-play.html">CSS Tutorial in Hindi</a>
+                        <p>Tom Hardy</p>
+                        <p>6.9M views &bull; 4 years ago</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
